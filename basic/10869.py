@@ -1,10 +1,10 @@
-A, B = map(int, input().split())
+a, b = map(int, input().split())
 
-Numbers = [A + B, A - B, A * B, A // B, A % B]
+numbers = [a + b, a - b, a * b, a // b, a % b]
 
-A >= 1
-B <= 10000
-for Number in Numbers:
+a >= 1
+b <= 10000
+for number in numbers:
     if A >= 1:
         if B <+ 10000:
-          print(Number)
+          print(number)

@@ -1,10 +1,10 @@
-Num_list = []
+num_list = []
 
 for i in range(9):
-    Num = int(input())
-    if Num <= 100 and Num not in Num_list:
-        Num_list.append(Num)
+    num = int(input())
+    if num <= 100 and num not in num_list:
+        num_list.append(num)
 
-Max = max(Num_list)
-print(Max)
-print( Num_list.index(Max) + 1)
+max = max(num_list)
+print(max)
+print( num_list.index(max) + 1)

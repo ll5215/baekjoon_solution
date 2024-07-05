@@ -1,10 +1,10 @@
-T = int(input())
+t = int(input())
 
-for i in range(T):
-    R, S = input().split()
-    R = int(R)
-    N = len(S)
+for i in range(t):
+    r, s = input().split()
+    r = int(r)
+    n = len(s)
     for a in range(N):
-        for r in range(R):
-            print(S[a], end = "")
+        for r in range(r):
+            print(s[a], end = "")
     print()

@@ -1,6 +1,6 @@
-N = int(input())
+n = int(input())
 
 i = 1
 while i <= 9:
-    print(N,'*',i,'=', N * i)
+    print(n,'*',i,'=', n * i)
     i = i + 1
