@@ -1,0 +1,13 @@
+n = int(input())
+
+def move(n: int, a:int, b:int) -> None:
+    if n == 1:
+        print(a, b)
+        return
+    move(n-1, a, 6-a-b)
+    print(a,b)
+    move(n-1, 6-a-b, b)
+    
+print(2**n-1)
+if n <= 20:
+    move(n,1,3)
