@@ -1,26 +1,19 @@
-def solve_jump_game(n, board):
-    # DP 테이블 초기화
-    dp = [[0] * n for _ in range(n)]
-    dp[0][0] = 1  # 시작점
-
-    # DP 테이블 채우기
+def jump_game(n, board): 
+    dp = [[0] * n for _ in range(n)]  #dp테이블 만들기
+    dp[0][0] = 1  #시작지점
+    
     for i in range(n):
         for j in range(n):
-            if dp[i][j] != 0 and board[i][j] != 0:  # 현재 칸이 도달 가능한 칸인지 확인
-                jump = board[i][j]
-                if i + jump < n:  # 아래쪽으로 이동
-                    dp[i + jump][j] += dp[i][j]
-                if j + jump < n:  # 오른쪽으로 이동
-                    dp[i][j + jump] += dp[i][j]
-
+            if dp[i][j] != 0 and board[i][j] != 0:  #현재 위치 보드판 안에 있는지
+                jump = board[i][j]  
+                if i + jump < n:   #아래 칸이 보드판 안넘어가면
+                    dp[i + jump][j] += dp[i][j]  #아래로 이동
+                if j + jump < n:   #오른쪽 칸이 보드판 안넘어가면
+                    dp[i][j + jump] += dp[i][j]   #오른쪽으로 이동
     return dp[n-1][n-1]
 
-import sys
-input = sys.stdin.readline
+n = int(input())
 
-# 입력 받기
-n = int(input().strip())
-board = [list(map(int, input().strip().split())) for _ in range(n)]
+board = [list(map(int,input().split())) for _ in range(n)]
 
-# 결과 출력
-print(solve_jump_game(n, board))
+print(jump_game(n, board))
